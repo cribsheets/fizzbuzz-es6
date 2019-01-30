@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript Runner</title>
+    <style>
+      * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; padding: 1rem; margin: 1rem;} main { width: 50%; margin: 0 auto; display: flex; padding: 0; flex-direction: column; justify-content: center; height: 100vh;} body {padding: 0; margin: 0;} html {padding: 0; margin:0;}
+      label { display: block; } button {width: 5rem; padding: 0.5rem 1rem; }
+      textarea {width: 100%; height: 50%; display: block;}
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <label for="input_id">
+        Please copy and paste your Javascript solution below. To run it, press "Run", and open your browser console to inspect the results.
+      </label>
+      <textarea id="input_id"></textarea>
+      <button id="run_button">Run</button>
+    </main>
+  </body>
+  <script>
+    document.getElementById("run_button").addEventListener('click', () => {
+      const input = document.getElementById('input_id');
+      const content = input.value;
+      eval(content);
+    });
+  </script>
+</html>
